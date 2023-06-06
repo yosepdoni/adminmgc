@@ -82,7 +82,7 @@
                     <td><?= $d['status_pengiriman']; ?></td>
                     <td><?= $d['tgl']; ?></td>
                     <td>
-                      <a href="index.php?p=detailorder&order_id=<?=$d['order_id'];?>" class="btn btn-info btn-sm"><i class="fa fa-eye"> Detail</i></a>
+                      <a href="index.php?p=detailorder_diterima&order_id=<?=$d['order_id'];?>" class="btn btn-info btn-sm"><i class="fa fa-eye"> Detail</i></a>
                     </td>
                   </tr>
                     

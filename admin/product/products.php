@@ -31,7 +31,8 @@
               
               <div class="card-body">                 
                 <div class="box-body">
-                  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for name products.." autocomplete="off">
+                  <input type="text" class="form-control col-sm-3" id="myInput" onkeyup="myFunction()" placeholder="Search for name products.." autocomplete="off">
+                  <br>
                       <div class="table-responsive">   
                           <table id="myTable" class="table table-striped table-hover">
                               <tr class="header">

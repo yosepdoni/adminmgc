@@ -84,26 +84,12 @@
                       <td>:</td>
                       <td> <img src="../assets/image/<?=$da['bukti_pay'];?>" alt="gambar" width="70" height="70"> </td>                      
                     </tr>
-                 
-                    <tr>
-                      <th scope="row">Status Pengiriman</th>
-                      <td>:</td>
-                      <td>
-                      <select name="status_pengiriman">
-                        <option value="Dalam Perjalanan">Dalam Perjalanan</option>
-                      </select>
-                      </td>                      
-                    </tr>
                   </tbody>
                 </table>
                  
             <!-- /.box-body -->
             
-            <div class="box-footer">
-            <button type="submit" class="btn btn-info float-right"><i class="fa fa-save"> Update </i></button> 
-            <a class="float-right"> &nbsp; &nbsp; </a> 
-            <button type="submit" class="btn btn-success float-right"><i class="fa fa-print"> Print</i></button>
-            </div>
+   
             <!-- /.box-footer -->
         </form>
         <?php 
