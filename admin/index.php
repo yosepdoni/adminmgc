@@ -14,6 +14,7 @@ $neworder = mysqli_num_rows($neworder);
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
+  
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
@@ -168,10 +169,21 @@ $neworder = mysqli_num_rows($neworder);
               <li class="nav-item">
                 <a href="index.php?p=products" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
-                  <p>Table</p>
+                  <p>Products</p>
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="index.php?p=dashboard" class="nav-link ">
+              <i class="nav-icon ion ion-bag"></i>
+              <p>
+                Orders   
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          
+           
              <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="index.php?p=neworders" class="nav-link">
@@ -185,16 +197,57 @@ $neworder = mysqli_num_rows($neworder);
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="index.php?p=orders" class="nav-link">
+                <a href="index.php?p=orders_dikirim" class="nav-link">
                   <i class="far far fa-circle nav-icon"></i>
                   <p>
-                     Orders
+                     Orders Dikirim
                   </p>
                 </a>
               </li>
             </ul>
-
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="index.php?p=orders_perjalanan" class="nav-link">
+                  <i class="far far fa-circle nav-icon"></i>
+                  <p>
+                     Orders Perjalanan
+                  </p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="index.php?p=orders_diterima" class="nav-link">
+                  <i class="far far fa-circle nav-icon"></i>
+                  <p>
+                     Orders Diterima
+                  </p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="index.php?p=orders_dibatalkan" class="nav-link">
+                  <i class="far far fa-circle nav-icon"></i>
+                  <p>
+                     Orders Dibatalkan
+                  </p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="index.php?p=datatables" class="nav-link">
+                  <i class="far far fa-circle nav-icon"></i>
+                  <p>
+                     Datatables
+                  </p>
+                </a>
+              </li>
+            </ul>
           </li>
+
+
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -228,8 +281,20 @@ $neworder = mysqli_num_rows($neworder);
         else if($page=="neworders"){
             include "order/neworders.php";   
         }
-        else if($page=="orders"){
-            include "order/orders.php";   
+        else if($page=="orders_dikirim"){
+            include "order/orders_dikirim.php";   
+        }
+        else if($page=="orders_perjalanan"){
+          include "order/orders_perjalanan.php";   
+        }
+        else if($page=="orders_diterima"){
+          include "order/orders_diterima.php";   
+        }
+        else if($page=="orders_dibatalkan"){
+          include "order/orders_dibatalkan.php";   
+        } 
+        else if($page=="datatables"){
+            include "order/datatables.php";   
         }
         else if($page=="detailneworder"){
             include "order/detailneworder.php";   
@@ -245,8 +310,23 @@ $neworder = mysqli_num_rows($neworder);
         else if($page=="editproduct"){
             include "product/editproduct.php";
         }
+        else if($page=="editimage"){
+          include "product/editimage.php";
+       }
         else if($page=="actiondelete"){
             include "product/actiondelete.php";
+        }
+        else if($page=="gridview_dikirim"){
+          include "laporan/gridview_orders_dikirim.php";
+        }
+        else if($page=="gridview_perjalanan"){
+          include "laporan/gridview_orders_perjalanan.php";
+        }
+        else if($page=="gridview_diterima"){
+          include "laporan/gridview_orders_diterima.php";
+        }
+        else if($page=="gridview_dibatalkan"){
+          include "laporan/gridview_orders_dibatalkan.php";
         }
     ?>
 </section>

@@ -1,13 +1,3 @@
-<!-- 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>  -->
-
-      <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
-      <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script> -->
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -60,9 +50,23 @@
                               $no =1;
                               while($d = mysqli_fetch_array($data)){
                             ?>
+
                               <tr> 
                                 <td><?php echo $no++;?></td>
-                                <td><img src="../assets/image/<?=$d['img'];?>" alt="gambar" width="70" height="70"> </td>
+                                <td><a href="#<?=$d['img'];?>"> <img src="../assets/image/<?=$d['img'];?>" alt="gambar" width="70" height="70"> </a> </td>
+                                   
+                                <!-- view image -->
+                                    <div class="overlay" id="<?=$d['img'];?>">
+                                      <a href="#" class="close">
+                                          <svg style="width:47px;height:47px" viewBox="0 0 20 30">
+                                              <path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                                          </svg>
+                                      </a>
+                                      <img src="../assets/image/<?=$d['img'];?>" alt="gambar" width="300" height="600">
+                                      <a href="index.php?p=editimage&product_id=<?=$d['product_id'];?>" class="update"><i class="fa fa-edit"> Update Image</i></a>
+                                    </div>
+                                    <!-- end view image -->
+                                    
                                 <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['product'], 0,20,); ?> ..</p></td>
                                 <td><?php echo $d['stok']; ?></td>
                                 <td><?php echo $d['category']; ?></td>
@@ -77,7 +81,6 @@
                               <?php
                                 }
                               ?>
-                              
                             </table>
                            
                     </div>
@@ -114,3 +117,91 @@
     }
   }
   </script>
+  <style>
+    .mainwrapper {
+    background: #fefefe;
+    display: flex;
+    width: 100%;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+}
+.update {
+    margin-left: -15%;
+    margin-top:30%;
+    color: white;
+    right: 90%;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
+}
+
+.overlay:target img {
+    animation: zoomDanFade 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    margin-left: -20px;
+    color: white;
+    text-decoration: none;
+    line-height: 14px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+/* animasi */
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+  </style>

@@ -9,11 +9,11 @@ $products = $_POST['products'];
 $payment = $_POST['payment'];
 $bukti_pay = $_POST ['bukti_pay'];
 $status_pengiriman = $_POST['status_pengiriman'];
-
+$tgl = $_POST ['tgl'];
 
  
 // menginput data ke database
-mysqli_query($conn,"insert into checkout values('$order_id','$user_id','$products','$payment','$bukti_pay','$status_pengiriman')");
+mysqli_query($conn,"insert into checkout values('$order_id','$user_id','$products','$payment','$bukti_pay','$status_pengiriman','$tgl')");
 ?>  
 <?php 
 // koneksi database
