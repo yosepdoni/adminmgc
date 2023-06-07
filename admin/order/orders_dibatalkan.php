@@ -77,7 +77,7 @@
                 ?>
                   <tr> 
                     <td><?php echo $no++;?></td>
-                    <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['products'], 0,90,); ?> ...</p></td>
+                    <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['products'], 0,90); ?> ...</p></td>
                     <td><?= "Rp ".number_format($d['payment']); ?></td>
                     <td><?= $d['user_id']; ?></td>
                     <td><?= $d['status_pengiriman']; ?></td>

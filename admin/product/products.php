@@ -47,13 +47,14 @@
                               </tr>
                                 
                               <?php
+                       
                               $data = mysqli_query($conn, "select * from products ORDER BY product ASC");
                               $no =1;
                               while($d = mysqli_fetch_array($data)){
-                            ?>
+                              ?>
 
                               <tr> 
-                                <td><?php echo $no++;?></td>
+                                <td><?=$no++;?></td>
                                 <td><a href="#<?=$d['img'];?>"> <img src="../assets/image/<?=$d['img'];?>" alt="gambar" width="70" height="70"> </a> </td>
                                    
                                 <!-- view image -->
@@ -68,10 +69,10 @@
                                     </div>
                                     <!-- end view image -->
                                     
-                                <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['product'], 0,20,); ?> ..</p></td>
-                                <td><?php echo $d['stok']; ?></td>
-                                <td><?php echo $d['category']; ?></td>
-                                <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['descriptions'], 0,25,); ?> ..</p></td>
+                                <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['product'], 0,20); ?> ..</p></td>
+                                <td><?=$d['stok']; ?></td>
+                                <td><?=$d['category']; ?></td>
+                                <td><p class="card-text m-1" style="white-space: pre-wrap;"><?=substr($d['descriptions'], 0,25); ?> ..</p></td>
                                 <td><?="Rp ".number_format($d['price']); ?></td>
                                 <td>
                                 <a href="index.php?p=editproduct&product_id=<?=$d['product_id'];?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>&nbsp;

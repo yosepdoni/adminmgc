@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+include '../user/sesi_login.php';
 $neworder = mysqli_query($conn,"SELECT * FROM orders");
 $neworder = mysqli_num_rows($neworder);
 ?>
@@ -34,11 +35,8 @@ $neworder = mysqli_num_rows($neworder);
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<!-- session -->
-   <?php
-    include('../user/sesi_login.php'); 
-    ?>
-    <!-- end session -->
+
+ 
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -368,18 +366,18 @@ $neworder = mysqli_num_rows($neworder);
 <script type="text/javascript">
     function logout(){
         Swal.fire({
-  title: 'Apa kamu Yakin Ingin Logout?',
-  text: "Kamu akan dialihkan ke halaman utama!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Ya, Logout!'
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location.href = "../user/logout.php";
-  }
-})};
+        title: 'Apa kamu Yakin Ingin Logout?',
+        text: "Kamu akan dialihkan ke halaman utama!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Logout!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "../user/logout.php";
+        }
+      })};
 </script>
 </body>
 </html>

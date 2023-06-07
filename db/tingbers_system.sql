@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Bulan Mei 2023 pada 10.15
+-- Waktu pembuatan: 06 Jun 2023 pada 20.22
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -63,7 +63,7 @@ CREATE TABLE `checkout` (
   `payment` varchar(30) NOT NULL,
   `bukti_pay` varchar(50) NOT NULL,
   `status_pengiriman` varchar(16) NOT NULL,
-  `tgl` varchar(20) NOT NULL
+  `tgl` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -71,9 +71,27 @@ CREATE TABLE `checkout` (
 --
 
 INSERT INTO `checkout` (`order_id`, `user_id`, `products`, `payment`, `bukti_pay`, `status_pengiriman`, `tgl`) VALUES
-(8, 5, 'ROG', '19000000', 'qr.png', 'Sedang dikemas', ''),
-(9, 8, 'Hp', '8500000', 'pay.jpeg', 'Dalam Perjalanan', ''),
-(10, 5, 'Laptop Asus', '4500000', 'qr.png', 'Sedang dikemas', '');
+(8, 5, 'ROG', '19000000', 'qr.png', 'Dalam Perjalanan', '2023-06-01'),
+(9, 8, 'Hp', '8500000', 'pay.jpeg', 'Dalam Perjalanan', '2023-06-02'),
+(10, 5, 'Laptop Asus', '4500000', 'qr.png', 'dikirim', '2023-06-02'),
+(11, 8, 'ASUS ROG', '16000000', 'a.png', 'diterima', '2023-06-01'),
+(12, 5, 'ASUS ROG', '16000000', 'a.png', 'Dalam Perjalanan', '2023-06-01'),
+(13, 5, 'ASUS ROG', '16000000', 'a.png', 'Dalam Perjalanan', '2023-06-01'),
+(14, 5, 'ASUS ROG', '16000000', 'a.png', 'dikirim', '2023-06-01'),
+(15, 5, 'ASUS ROG', '16000000', 'a.png', 'dikirim', '2023-06-05'),
+(22, 5, 'ASUS ROG', '16000000', 'a.png', 'diterima', '2023-06-03'),
+(23, 5, 'ASUS ROG', '16000000', 'a.png', 'dikirim', '2023-06-02'),
+(24, 5, 'ASUS ROG', '16000000', 'a.png', 'dikirim', '2023-06-01'),
+(25, 5, 'ASUS ROG', '16000000', 'a.png', 'Dalam Perjalanan', '2023-06-02'),
+(26, 5, 'Acer', '16000000', 'a.png', 'Dalam Perjalanan', '2023-06-03'),
+(27, 8, 'ASaaUS ROG', '16000000', 'a.png', 'Dalam Perjalanan', '2023-05-31'),
+(28, 5, 'Acer Aspire One', '16000000', 'a.png', 'dibatalkan', '2023-05-31'),
+(29, 5, 'ASUS ROG aaa', '16000000', 'pay.jpeg', 'dibatalkan', '2023-05-31'),
+(36, 5, 'ASUS ROG', '16000000', 'a.png', 'dibatalkan', '2023-05-31'),
+(38, 5, 'ASUS ROG', '16000000', 'a.png', 'dibatalkan', '2023-05-31'),
+(39, 5, 'ASUS ROG', '16000000', 'pay.jpeg', 'Dalam Perjalanan', '2023-06-02'),
+(40, 5, 'ASUS ROG sadasjdgjada asjdjashgdjashjdas asjdas', '16000000', 'pay.jpeg', 'Dalam Perjalanan', '2023-06-01'),
+(42, 5, 'Gaming ASUS ROG', '16000000', 'a.png', 'Dalam Perjalanan', '2023-05-31');
 
 -- --------------------------------------------------------
 
@@ -98,7 +116,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `products`, `category`, `qty`, `payment`, `bukti_pay`, `tgl`) VALUES
-(11, 8, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31');
+(30, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31'),
+(31, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31'),
+(32, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31'),
+(33, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31'),
+(34, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31'),
+(35, 5, 50, 'ASUS ROG', 'Laptop Gaming', 1, 16000000, 'a.png', '2023-05-31');
 
 -- --------------------------------------------------------
 
@@ -121,8 +144,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product`, `stok`, `category`, `descriptions`, `price`, `img`) VALUES
-(1, 'ROG', 10, 'Laptop Gaming', 'sqdqdqweqweqweqweqweqw. 1500 dsfjusieurfiweurioweureqwureqwnwque9q qw9ue9qwneuqwue9qw wqiyheqiwyeoiqwyioeqwb wqiyeiqwyeioqyweiyqwieqwyeiqwyeiqwyeioqw qwyeiqwyeioqwyoieyqwoyeoqwye  qweyiqwyeiqwyeioqwyeioqwyioeyiqwe qyeiqwuyeiqwyeioqwyeiyqwiryweb rweyrwiueyffyw8ryfwo9eyrgiowyt3 yw4f2rq4yf2394yd9qw8yre98qwy42qb 423984rfyw39qryf9weyr9qw8e we9rtfw984ty9w3yrf982yrqw 98weyrfe98qwy494refqyaryfw8yrqw 8r98fwyq498wyt49fywqf9r8y298q4y qweurtqft98qytw49f286q4r926f3wr9239r3wrwq\r\n', 1513900, 'ASUS_ROG.jpg'),
-(50, 'ASUS E402', 2, 'Laptop Konsumer', 'laptop yang paling banyak digunakan oleh mahasiswa', 4000000, 'fg.png');
+(50, 'ASUS E402', 2, 'Laptop Konsumer', 'laptop yang paling banyak digunakan oleh mahasiswa keren', 4000000, 'fg.png'),
+(51, 'ASUS ROG', 10, 'Laptop Gaming', 'ini adalah laptop yang dikenal untuk bermain game sangat lancar ditahun 2023', 19500000, 'ASUS_ROG.jpg');
 
 -- --------------------------------------------------------
 
@@ -197,13 +220,13 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `product_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
