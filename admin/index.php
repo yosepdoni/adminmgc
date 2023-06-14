@@ -32,7 +32,8 @@ $neworder = mysqli_num_rows($neworder);
   <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../assets/plugins/summernote/summernote-bs4.min.css">
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -360,8 +361,8 @@ $neworder = mysqli_num_rows($neworder);
 <!-- AdminLTE App -->
 <script src="../assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../assets/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../assets/dist/js/rm-banner.js"></script>
+<!--  remove banner 00 webhost -->
 
 <script type="text/javascript">
     function logout(){

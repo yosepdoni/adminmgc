@@ -47,7 +47,7 @@
                     $conn=mysqli_query($conn," SELECT * FROM users WhERE user_id='$da[user_id]'");
                     while($h=mysqli_fetch_array($conn)){
                    ?> 
-           
+                    <input type="hidden" name="order_id" value="<?=$da['order_id']; ?>">
                    <table class="table">
                   <tbody>
                     <tr>
@@ -84,9 +84,16 @@
                       <td>:</td>
                       <td> <img src="../assets/image/<?=$da['bukti_pay'];?>" alt="gambar" width="70" height="70"> </td>                      
                     </tr>
+                    <tr>
+                          <td>
+                            <input type="hidden" name="status_pengiriman" value="Dalam Perjalanan">
+                          </td>                      
+                        </tr>
                   </tbody>
                 </table>
-                 
+                <div class="box-footer">
+                <button type="submit" class="btn btn-info float-right"><i class="fa fa-save"> Set Dalam Perjalanan </i></button>
+              </div>
             <!-- /.box-body -->
             
    
